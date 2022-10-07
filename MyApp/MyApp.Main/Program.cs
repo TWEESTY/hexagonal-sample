@@ -5,7 +5,7 @@ using MyApp.Application.Ports.Output.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// TODO : est-ce logique ?
+// TODO : est-ce logique ? Je ne peux pas le mettre côté Application car pas de référence à l'adapter output...
 builder.Services.AddTransient<IBookRepository, BookRepository>();
 
 builder.Services.AddAdaptersInput();
