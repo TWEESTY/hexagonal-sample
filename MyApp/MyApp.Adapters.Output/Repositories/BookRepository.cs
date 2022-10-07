@@ -43,5 +43,10 @@ namespace MyApp.Adapters.Output.Repositories
 
             return true;
         }
+
+        public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            return this._context.SaveChangesAsync(cancellationToken);
+        }
     }
 }
