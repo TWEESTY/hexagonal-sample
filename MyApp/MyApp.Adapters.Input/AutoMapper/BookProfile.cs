@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
-using Book = MyApp.Application.Ports.Output.Repositories.Book;
+using MyApp.Adapters.Input.Controllers;
+using MyApp.Domain.Models;
 
 namespace MyApp.Adapters.Input.AutoMapper
 {
     internal class BookProfile : Profile
     {
         internal BookProfile() {
-            this.CreateMap<Book, MyApp.Application.Book>()
+            this.CreateMap<BookDTO, Book>()
               .ReverseMap();
         }
     }

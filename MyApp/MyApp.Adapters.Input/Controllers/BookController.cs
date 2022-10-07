@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Application.Services;
+using MyApp.Domain.Models;
 
 namespace MyApp.Adapters.Input.Controllers
 {
@@ -20,12 +21,12 @@ namespace MyApp.Adapters.Input.Controllers
         }
 
         [HttpGet()]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Book))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(BookDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetBook(int id)
         {
-            MyApp.Application.Book bookFromApplication = this._bookManagementService.GetBook(id);
-            Book book = this._mapper.Map<Book>(bookFromApplication);
+            Book bookFromApplication = this._bookManagementService.GetBook(id);
+            BookDTO book = this._mapper.Map<BookDTO>(bookFromApplication);
 
             if (bookFromApplication == null)
             {
@@ -36,11 +37,11 @@ namespace MyApp.Adapters.Input.Controllers
         }
 
         [HttpPut()]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Book))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(BookDTO))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult CompleteUpdateBook(Book updateBook)
+        public IActionResult CompleteUpdateBook(BookDTO updateBook)
         {
-            bool result = this._bookManagementService.UpdateBook(this._mapper.Map<MyApp.Application.Book>(updateBook));
+            bool result = this._bookManagementService.UpdateBook(this._mapper.Map<Book>(updateBook));
 
             // Non réaliste
             if(!result)

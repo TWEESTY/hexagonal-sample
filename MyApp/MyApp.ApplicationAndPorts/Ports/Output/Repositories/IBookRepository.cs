@@ -1,4 +1,6 @@
-﻿namespace MyApp.Application.Ports.Output.Repositories
+﻿using MyApp.Domain.Models;
+
+namespace MyApp.Application.Ports.Output.Repositories
 {
     public interface IBookRepository
     {

@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddTransient<IBookManagementService, BookManagementService>();
 
-builder.Services.AddAutoMapper(typeof(BookProfile), typeof(MyApp.Application.AutoMapper.BookProfile));
+builder.Services.AddAutoMapper(typeof(BookProfile));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

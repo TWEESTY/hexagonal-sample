@@ -1,4 +1,6 @@
-﻿namespace MyApp.Application.Ports.Input.BookManagementService
+﻿using MyApp.Domain.Models;
+
+namespace MyApp.Application.Ports.Input.BookManagementService
 {
     public interface IBookManagementService
     {
