@@ -1,16 +1,19 @@
 using MyApp.Adapters.Input.AutoMapper;
 using MyApp.Adapters.Output.Context;
+using MyApp.Adapters.Output.Extensions;
 using MyApp.Adapters.Output.Repositories;
 using MyApp.Application.Application.Services;
+using MyApp.Application.Extensions;
 using MyApp.Application.Ports.Input.BookManagementService;
 using MyApp.Application.Ports.Output.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<InMemoryContext>();
+builder.Services.AddAdaptersOutput();
+builder.Services.AddApplication();
 
-builder.Services.AddTransient<IBookManagementService, BookManagementService>();
-builder.Services.AddTransient<IBookRepository, BookRepository>();
+// C'est de la responsabilité de qui ?
+builder.Services.AddScoped<IBookRepository, BookRepository>();
 
 builder.Services.AddAutoMapper(typeof(BookProfile));
 
