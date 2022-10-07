@@ -1,26 +1,19 @@
-using MyApp.Adapters.Input.AutoMapper;
-using MyApp.Adapters.Output.Context;
+using MyApp.Adapters.Input.Extensions;
 using MyApp.Adapters.Output.Extensions;
 using MyApp.Adapters.Output.Repositories;
-using MyApp.Application.Application.Services;
-using MyApp.Application.Extensions;
-using MyApp.Application.Ports.Input.BookManagementService;
 using MyApp.Application.Ports.Output.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// TODO : est-ce logique ?
+builder.Services.AddTransient<IBookRepository, BookRepository>();
+
+builder.Services.AddAdaptersInput();
 builder.Services.AddAdaptersOutput();
-builder.Services.AddApplication();
-
-// C'est de la responsabilité de qui ?
-builder.Services.AddScoped<IBookRepository, BookRepository>();
-
-builder.Services.AddAutoMapper(typeof(BookProfile));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 
 var app = builder.Build();
 

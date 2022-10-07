@@ -1,5 +1,7 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MyApp.Application.Application.Services;
 using MyApp.Domain.Models;
 

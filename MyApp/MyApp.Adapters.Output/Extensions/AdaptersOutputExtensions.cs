@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MyApp.Adapters.Output.Context;
+using MyApp.Adapters.Output.Repositories;
+using MyApp.Application.Ports.Output.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
