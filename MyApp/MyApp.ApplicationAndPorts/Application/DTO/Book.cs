@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyApp.Application.Ports.Input.BookManagementService
+namespace MyApp.Application
 {
     public class Book
     {
