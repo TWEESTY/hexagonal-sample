@@ -6,7 +6,7 @@ using MyApp.Domain.Models;
 namespace MyApp.Adapters.Input.Controllers
 {
     [ApiController]
-    [Route("[book]")]
+    [Route("[controller]")]
     public class BookController : ControllerBase
     {
         private readonly ILogger<BookController> _logger;
