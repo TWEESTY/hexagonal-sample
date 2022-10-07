@@ -14,6 +14,8 @@ namespace MyApp.Adapters.Output.Repositories
         public BookRepository(InMemoryContext context)
         {
             this._context = context;
+            // Trick to force the OnModelCreating (i.e. https://github.com/dotnet/efcore/issues/11666)
+            this._context.Database.EnsureCreated();
         }
 
         public async Task<Book?> GetBookAsync(int id) { 

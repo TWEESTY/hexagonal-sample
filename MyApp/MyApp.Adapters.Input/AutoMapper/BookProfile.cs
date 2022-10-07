@@ -4,9 +4,9 @@ using MyApp.Domain.Models;
 
 namespace MyApp.Adapters.Input.AutoMapper
 {
-    internal class BookProfile : Profile
+    public class BookProfile : Profile
     {
-        internal BookProfile() {
+        public BookProfile() {
             
             this.CreateMap<Book, BookDTO>();
             this.CreateMap<BookDTO, Book>()

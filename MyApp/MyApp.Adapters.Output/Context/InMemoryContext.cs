@@ -11,13 +11,10 @@ namespace MyApp.Adapters.Output.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseInMemoryDatabase(databaseName: "InMemory");
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
             IList<BookEntity> defaultBooks = new List<BookEntity>();
 
             defaultBooks.Add(new BookEntity() { Id = 1, Price = (decimal?)1.1, Title = "Book1" });
@@ -27,6 +24,5 @@ namespace MyApp.Adapters.Output.Context
             modelBuilder.Entity<BookEntity>()
                 .HasData(defaultBooks);
         }
-
     }
 }
