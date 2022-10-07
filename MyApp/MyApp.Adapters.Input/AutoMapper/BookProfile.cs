@@ -7,8 +7,10 @@ namespace MyApp.Adapters.Input.AutoMapper
     internal class BookProfile : Profile
     {
         internal BookProfile() {
+            
+            this.CreateMap<Book, BookDTO>();
             this.CreateMap<BookDTO, Book>()
-              .ReverseMap();
+                .ConstructUsing((BookDTO bookDTO) => BookFactory.Instance.CreateMutableBook(bookDTO.Id));
         }
     }
 }
