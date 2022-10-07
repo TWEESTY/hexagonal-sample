@@ -4,7 +4,7 @@ namespace MyApp.Application.Ports.Output.Repositories
 {
     public interface IBookRepository
     {
-        public Book? GetBook(int id);
-        public bool UpdateBook(Book book);
+        public Task<Book?> GetBookAsync(int id);
+        public Task<bool> UpdateBookAsync(Book book);
     }
 }

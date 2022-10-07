@@ -1,4 +1,5 @@
-﻿using MyApp.Adapters.Output.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using MyApp.Adapters.Output.Context;
 using MyApp.Adapters.Output.Entities;
 using MyApp.Application.Ports.Output.Repositories;
 using MyApp.Domain.Models;
@@ -15,8 +16,8 @@ namespace MyApp.Adapters.Output.Repositories
             this._context = context;
         }
 
-        public Book? GetBook(int id) { 
-            BookEntity? bookEntity = this._context.Books.FirstOrDefault(x => x.Id == id); 
+        public async Task<Book?> GetBookAsync(int id) { 
+            BookEntity? bookEntity = await this._context.Books.FirstOrDefaultAsync(x => x.Id == id); 
             if (bookEntity == null)
             {
                 return null;
@@ -29,9 +30,9 @@ namespace MyApp.Adapters.Output.Repositories
             return book;
         }
 
-        public bool UpdateBook(Book book)
+        public async Task<bool> UpdateBookAsync(Book book)
         {
-            BookEntity? bookEntity = this._context.Books.FirstOrDefault(x => x.Id == id);
+            BookEntity? bookEntity = await this._context.Books.FirstOrDefaultAsync(x => x.Id == book.Id);
             if (bookEntity == null)
             {
                 return false;
@@ -39,8 +40,6 @@ namespace MyApp.Adapters.Output.Repositories
 
             bookEntity.Price = book.Price;
             bookEntity.Title = book.Title;
-
-            this._context.SaveChanges();
 
             return true;
         }

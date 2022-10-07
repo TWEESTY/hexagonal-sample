@@ -4,7 +4,7 @@ namespace MyApp.Application.Ports.Input.BookManagementService
 {
     public interface IBookManagementService
     {
-        public Book GetBook(int id);
-        public bool UpdateBook(Book book);
+        public Task<Book?> GetBookAsync(int id);
+        public Task<bool> UpdateBookAsync(Book book);
     }
 }

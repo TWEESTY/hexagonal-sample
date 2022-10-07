@@ -25,13 +25,14 @@ namespace MyApp.Adapters.Input.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetBook(int id)
         {
-            Book bookFromApplication = this._bookManagementService.GetBook(id);
-            BookDTO book = this._mapper.Map<BookDTO>(bookFromApplication);
+            Book? bookFromApplication = this._bookManagementService.GetBookAsync(id).GetAwaiter().GetResult();
 
             if (bookFromApplication == null)
             {
                 return NotFound();
             }
+
+            BookDTO book = this._mapper.Map<BookDTO>(bookFromApplication);
 
             return Ok(book);
         }
@@ -41,7 +42,7 @@ namespace MyApp.Adapters.Input.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult CompleteUpdateBook(BookDTO updateBook)
         {
-            bool result = this._bookManagementService.UpdateBook(this._mapper.Map<Book>(updateBook));
+            bool result = this._bookManagementService.UpdateBookAsync(this._mapper.Map<Book>(updateBook)).GetAwaiter().GetResult();
 
             // Non réaliste
             if(!result)

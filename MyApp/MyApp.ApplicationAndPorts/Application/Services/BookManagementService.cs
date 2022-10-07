@@ -13,14 +13,14 @@ namespace MyApp.Application.Application.Services
             this._bookRepository = bookRepository;
         }
 
-        public Book GetBook(int id)
+        public async Task<Book?> GetBookAsync(int id)
         {
-            return this._bookRepository.GetBook(id);
+            return await this._bookRepository.GetBookAsync(id);
         }
 
-        public bool UpdateBook(Book book)
+        public async Task<bool> UpdateBookAsync(Book book)
         {
-            return this._bookRepository.UpdateBook(book);
+            return await this._bookRepository.UpdateBookAsync(book);
         }
     }
 }
