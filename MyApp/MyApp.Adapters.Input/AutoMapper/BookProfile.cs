@@ -4,7 +4,7 @@ using MyApp.Domain.Models;
 
 namespace MyApp.Adapters.Input.AutoMapper
 {
-    public class BookProfile : Profile
+    internal class BookProfile : Profile
     {
         public BookProfile() {
             

@@ -4,7 +4,7 @@ using MyApp.Domain.Models;
 
 namespace MyApp.Application.Application.Services
 {
-    public class BookManagementService : IBookManagementService
+    internal class BookManagementService : IBookManagementService
     {
         private readonly IBookRepository _bookRepository;
 
