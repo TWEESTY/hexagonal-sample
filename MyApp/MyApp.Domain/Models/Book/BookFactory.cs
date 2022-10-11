@@ -2,7 +2,7 @@
 {
     public class BookFactory
     {
-        private static readonly BookFactory instance = new BookFactory();
+        private static readonly BookFactory instance = new();
 
         static BookFactory()
         {

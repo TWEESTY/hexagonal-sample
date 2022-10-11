@@ -1,8 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using MyApp.Application.Application.Services;
 using MyApp.Application.Ports.Input.BookManagementService;
 using MyApp.Domain.Models;
 
@@ -12,13 +10,11 @@ namespace MyApp.Adapters.Input.Controllers
     [Route("[controller]")]
     public class BookController : ControllerBase
     {
-        private readonly ILogger<BookController> _logger;
         private readonly IBookManagementService _bookManagementService;
         private readonly IMapper _mapper;
 
-        public BookController(ILogger<BookController> logger, IBookManagementService bookManagementService, IMapper mapper)
+        public BookController(IBookManagementService bookManagementService, IMapper mapper)
         {
-            this._logger = logger;
             this._bookManagementService = bookManagementService;
             this._mapper = mapper;
         }
