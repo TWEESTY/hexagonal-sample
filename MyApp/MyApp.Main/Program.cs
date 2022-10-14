@@ -6,12 +6,9 @@ using MyApp.Application.Ports.Output.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddTransient<IBookRepository, BookRepository>();
-
 builder.Services.AddAdaptersInput();
 builder.Services.AddAdaptersOutput();
 builder.Services.AddApplication();
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
