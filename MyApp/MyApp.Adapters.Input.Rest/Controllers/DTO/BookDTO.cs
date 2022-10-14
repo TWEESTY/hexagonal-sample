@@ -1,4 +1,4 @@
-﻿namespace MyApp.Adapters.Input.Controllers
+﻿namespace MyApp.Adapters.Input.Rest.Controllers
 {
     public class BookDTO
     {

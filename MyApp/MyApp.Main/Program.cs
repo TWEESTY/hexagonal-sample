@@ -1,8 +1,6 @@
-using MyApp.Adapters.Input.Extensions;
+using MyApp.Adapters.Input.Rest.Extensions;
 using MyApp.Adapters.Output.Extensions;
-using MyApp.Adapters.Output.Repositories;
 using MyApp.Application.Extensions;
-using MyApp.Application.Ports.Output.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

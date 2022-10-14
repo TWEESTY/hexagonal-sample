@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyApp.Adapters.Input\MyApp.Adapters.Input.csproj" />
+    <ProjectReference Include="..\MyApp.Adapters.Input.Rest\MyApp.Adapters.Input.Rest.csproj" />
     <ProjectReference Include="..\MyApp.Adapters.Output\MyApp.Adapters.Output.csproj" />
     <ProjectReference Include="..\MyApp.ApplicationAndPorts\MyApp.Application.csproj" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MyApp.Adapters.Input.AutoMapper;
+using MyApp.Adapters.Input.Rest.AutoMapper;
 
-namespace MyApp.Adapters.Input.Extensions
+namespace MyApp.Adapters.Input.Rest.Extensions
 {
     public static class AdaptersInputExtensions
     {

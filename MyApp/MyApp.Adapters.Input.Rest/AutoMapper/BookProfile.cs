@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using MyApp.Adapters.Input.Controllers;
+using MyApp.Adapters.Input.Rest.Controllers;
 using MyApp.Domain.Models;
 
-namespace MyApp.Adapters.Input.AutoMapper
+namespace MyApp.Adapters.Input.Rest.AutoMapper
 {
     internal class BookProfile : Profile
     {

@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Application", "MyApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Adapters.Output", "MyApp.Adapters.Output\MyApp.Adapters.Output.csproj", "{4B20358A-E264-4377-A0DA-53C15D516951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Adapters.Input", "MyApp.Adapters.Input\MyApp.Adapters.Input.csproj", "{49D099CE-B1D4-49C0-8BC5-7E0F3C1888D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Adapters.Input.Rest", "MyApp.Adapters.Input.Rest\MyApp.Adapters.Input.Rest.csproj", "{49D099CE-B1D4-49C0-8BC5-7E0F3C1888D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Main", "MyApp.Main\MyApp.Main.csproj", "{A2F056E4-4367-413B-B685-02F0FFF2895D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Main", "MyApp.Main\MyApp.Main.csproj", "{A2F056E4-4367-413B-B685-02F0FFF2895D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Ports.Input.BookManagementService;
 using MyApp.Domain.Models;
 
-namespace MyApp.Adapters.Input.Controllers
+namespace MyApp.Adapters.Input.Rest.Controllers
 {
     [ApiController]
     [Route("[controller]")]
