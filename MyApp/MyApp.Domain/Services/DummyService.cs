@@ -4,7 +4,7 @@ namespace MyApp.Domain.Services
 {
     public class DummyService
     {
-        public int DoSomething(Book book)
+        public int ReturnsId(Book book)
         {
             return book.Id;
         }

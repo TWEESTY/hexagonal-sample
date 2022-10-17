@@ -45,7 +45,7 @@ namespace MyApp.Adapters.Input.Rest.Controllers
 
             // Non réaliste
             if(!result)
-                return BadRequest(); 
+                return NotFound(); 
 
             return Ok(updateBook);
         }
