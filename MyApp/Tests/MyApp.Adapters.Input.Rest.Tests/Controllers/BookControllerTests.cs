@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using MyApp.Adapters.Input.Rest.Controllers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using MyApp.Adapters.Input.Rest.AutoMapper;
+using Newtonsoft.Json.Linq;
 
 namespace MyApp.Adapters.Input.Rest.Tests.Controllers
 {
@@ -16,8 +18,9 @@ namespace MyApp.Adapters.Input.Rest.Tests.Controllers
     {
         private IMapper _mapper;
 
-        public BookControllerTests(IMapper mapper) {
-            this._mapper = mapper;
+        public BookControllerTests() {
+
+            _mapper = new Mapper(new MapperConfiguration(cfg => cfg.AddProfile<BookProfile>()));
         }
 
         [Fact]
@@ -36,7 +39,9 @@ namespace MyApp.Adapters.Input.Rest.Tests.Controllers
             IActionResult result = bookController.GetBook(returnBookByService.Id);
 
             Assert.IsType<OkObjectResult>(result);
-            Assert.Equivalent(returnBookByService, result);
+
+            var resultBook = ((BookDTO)((OkObjectResult)result).Value);
+            Assert.True(IsEqual(returnBookByService, resultBook));
         }
 
         [Fact]
@@ -51,7 +56,6 @@ namespace MyApp.Adapters.Input.Rest.Tests.Controllers
             IActionResult result = bookController.GetBook(1);
 
             Assert.IsType<NotFoundResult>(result);
-            Assert.Null(result);
         }
 
         [Fact]
@@ -109,8 +113,8 @@ namespace MyApp.Adapters.Input.Rest.Tests.Controllers
                 return false;
 
             return book.Id == bookDTO.Id
-                   && book.Title == bookDTO.Title;
-                   //&& book.Price == bookDTO.Price;
+                   && book.Title == bookDTO.Title
+                   && book.Price == Convert.ToDecimal(bookDTO.Price);
         }
     }
 }

@@ -74,7 +74,7 @@ namespace MyApp.Application.Tests.Application.Services
             bookToUpdate.Title = "Super book";
 
             var mockBookRepository = new Mock<IBookRepository>();
-            mockBookRepository.Setup(m => m.UpdateBookAsync(It.IsAny<Book>())).ReturnsAsync(true);
+            mockBookRepository.Setup(m => m.UpdateBookAsync(It.IsAny<Book>())).ReturnsAsync(false);
 
             var bookManagementService = new BookManagementService(mockBookRepository.Object);
 
