@@ -10,11 +10,13 @@ namespace MyApp.Adapters.Output.Repositories
     {
         private readonly InMemoryContext _context;
 
-        public BookRepository(InMemoryContext context)
+        public BookRepository(InMemoryContext context, bool initDatabase = true)
         {
             this._context = context;
+
             // Trick to force the OnModelCreating (i.e. https://github.com/dotnet/efcore/issues/11666)
-            this._context.Database.EnsureCreated();
+            if (initDatabase)
+                this._context.Database.EnsureCreated();
         }
 
         public async Task<Book?> GetBookAsync(int id) { 

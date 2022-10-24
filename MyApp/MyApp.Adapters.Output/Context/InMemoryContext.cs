@@ -5,7 +5,7 @@ namespace MyApp.Adapters.Output.Context
 {
     public class InMemoryContext : DbContext
     {
-        internal DbSet<BookEntity> Books { get; set; }
+        public virtual DbSet<BookEntity> Books { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

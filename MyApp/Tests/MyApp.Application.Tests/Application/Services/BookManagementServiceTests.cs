@@ -63,7 +63,7 @@ namespace MyApp.Application.Tests.Application.Services
             bool result = await bookManagementService.UpdateBookAsync(bookToUpdate);
 
             Assert.True(result);
-            // Count SaveChanges
+            mockBookRepository.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
         }
 
         [Fact]
@@ -81,7 +81,7 @@ namespace MyApp.Application.Tests.Application.Services
             bool result = await bookManagementService.UpdateBookAsync(bookToUpdate);
 
             Assert.False(result);
-            // Count SaveChanges
+            mockBookRepository.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Never);
         }
 
     }
