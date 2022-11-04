@@ -7,6 +7,8 @@ namespace MyApp.Adapters.Output.Context
     {
         public virtual DbSet<BookEntity> Books { get; set; }
 
+        public virtual DbSet<StoreEntity> Stores { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseInMemoryDatabase(databaseName: "InMemory");
@@ -21,8 +23,16 @@ namespace MyApp.Adapters.Output.Context
                 new BookEntity() { Id = 3, Title = "Book3" }
             };
 
+            IList<StoreEntity> defaultStores = new List<StoreEntity>
+            {
+                new StoreEntity() { Code = "S01", Name = "Store 01" },
+                new StoreEntity() { Code = "S02", Name = "Store 02" },
+            };
+
             modelBuilder.Entity<BookEntity>()
                 .HasData(defaultBooks);
+            modelBuilder.Entity<StoreEntity>()
+                .HasData(defaultStores);
         }
     }
 }

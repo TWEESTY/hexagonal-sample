@@ -1,7 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MyApp.Application.Ports.Input.BookManagementService;
+using MyApp.Application.Ports.Input;
 using MyApp.Domain.Models;
 
 namespace MyApp.Adapters.Input.Rest.Controllers

@@ -1,16 +1,10 @@
-﻿using MyApp.Application.Ports.Input.BookManagementService;
-using Moq;
+﻿using Moq;
 using MyApp.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MyApp.Adapters.Input.Rest.Controllers;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Adapters.Input.Rest.AutoMapper;
-using Newtonsoft.Json.Linq;
+using MyApp.Application.Ports.Input;
 
 namespace MyApp.Adapters.Input.Rest.Tests.Controllers
 {

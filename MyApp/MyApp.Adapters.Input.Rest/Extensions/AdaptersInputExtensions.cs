@@ -7,7 +7,7 @@ namespace MyApp.Adapters.Input.Rest.Extensions
     {
         public static void AddAdaptersInput(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(BookProfile));
+            services.AddAutoMapper(new[] { typeof(BookProfile), typeof(StoreProfile) });        
         }
     }
 }

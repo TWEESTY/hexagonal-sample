@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MyApp.Application.Application.Services;
-using MyApp.Application.Ports.Input.BookManagementService;
+using MyApp.Application.Ports.Input;
 using MyApp.Application.Ports.Output;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace MyApp.Application.Extensions
 {
@@ -18,6 +16,7 @@ namespace MyApp.Application.Extensions
         private static void AddServices(IServiceCollection services)
         {
             services.AddScoped<IBookManagementService, BookManagementService>();
+            services.AddScoped<IStoreManagementService, StoreManagementService>();
         }
 
         private static void AddRepositories(IServiceCollection services)
